@@ -255,9 +255,9 @@ button {
 }
 
 #stars {
-  top: 4rem;
+  top: 6rem;
   display: flex;
-  gap: 5rem;
+  gap: 10rem;
   position: absolute;
   animation: twinkle 1.5s infinite;
 }
