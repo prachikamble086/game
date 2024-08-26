@@ -17,6 +17,9 @@ const nextButton = document.getElementById("next-button");
 const userChoiceImg = document.getElementById("user-choice");
 const pcChoiceImg = document.getElementById("pc-choice");
 
+const userChoiceButton = document.getElementById("user-choice-button");
+const pcChoiceButton = document.getElementById("pc-choice-button");
+
 const stone = "stone";
 const paper = "paper";
 const scissors = "scissors";
@@ -44,6 +47,16 @@ function randomPCChoice() {
     return paper;
   } else {
     return scissors;
+  }
+}
+
+function getBorderColor(choice) {
+  if (choice == stone) {
+    return "#0074b6";
+  } else if (choice == paper) {
+    return "#ffa943";
+  } else {
+    return "#bd00ff";
   }
 }
 
@@ -93,6 +106,9 @@ function updateUI(userChoice, computerChoice, result) {
   userChoiceImg.src = userChoice + ".png";
   pcChoiceImg.src = computerChoice + ".png";
 
+  userChoiceButton.style.borderColor = getBorderColor(userChoice);
+  pcChoiceButton.style.borderColor = getBorderColor(computerChoice);
+
   userScoreValue.innerHTML = userScore;
   displayComputerScore.innerHTML = computerScore;
 
@@ -108,9 +124,6 @@ function updateUI(userChoice, computerChoice, result) {
     pcWin.style.display = "flex";
   } else if (result == tie) {
     userPCTie.style.display = "flex";
-
-    // let playAgainTie = document.getElementById("play-again-button");
-    // playAgainTie.innerHTML = "REPLAY";
   }
 }
 
