@@ -28,8 +28,11 @@ const tie = "tie";
 const won = "won";
 const lost = "lost";
 
-let computerScore = 0;
-let userScore = 0;
+let computerScore = Number(localStorage.getItem("computerScore"));
+let userScore = Number(localStorage.getItem("userScore"));
+
+userScoreValue.innerHTML = userScore;
+displayComputerScore.innerHTML = computerScore;
 
 function playGame(userChoice) {
   const computerChoice = randomPCChoice();
@@ -98,9 +101,9 @@ function updateScore(result) {
   } else if (result == lost) {
     computerScore += 1;
   }
+  localStorage.setItem("userScore", userScore);
+  localStorage.setItem("computerScore", computerScore);
 }
-console.log({ userChoiceImg });
-console.log({ pcChoiceImg });
 
 function updateUI(userChoice, computerChoice, result) {
   userChoiceImg.src = userChoice + ".png";
