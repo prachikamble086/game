@@ -129,10 +129,11 @@ button {
 
 #you-picked,
 #pc-picked {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
   margin-bottom: 0.7rem;
-  position: relative;
+  position: absolute;
+  top: -3rem;
 }
 
 .you-picked,
@@ -143,8 +144,8 @@ button {
 #pc-circle,
 #user-circle {
   position: absolute;
-  top: 60%;
-  left: 48%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -160,20 +161,20 @@ button {
 
 .circle-one {
   background: #2e9a2563;
-  width: 11rem;
-  height: 11rem;
+  width: 16rem;
+  height: 16rem;
 }
 
 .circle-two {
-  background: #3dc73063;
-  width: 9rem;
-  height: 9rem;
+  background: #3dc13163;
+  width: 14rem;
+  height: 14rem;
 }
 
 .circle-three {
   background: rgb(0, 151, 0);
-  width: 9rem;
-  height: 9rem;
+  width: 12rem;
+  height: 12rem;
 }
 
 .outcome-section {
@@ -255,19 +256,10 @@ button {
 }
 
 #stars {
-  top: 6rem;
-  display: flex;
-  gap: 10rem;
+  top: 2rem;
+  width: 25rem;
   position: absolute;
   animation: twinkle 1.5s infinite;
-}
-
-#stars-one {
-  rotate: 35deg;
-}
-
-#stars-two {
-  rotate: -35deg;
 }
 
 @keyframes twinkle {
