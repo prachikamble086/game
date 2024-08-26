@@ -20,6 +20,11 @@ const pcChoiceImg = document.getElementById("pc-choice");
 const userChoiceButton = document.getElementById("user-choice-button");
 const pcChoiceButton = document.getElementById("pc-choice-button");
 
+const outterbuttonuserpicked = document.getElementById(
+  "outter-button-user-picked"
+);
+const outterbuttonpcpicked = document.getElementById("outter-button-pc-picked");
+
 const stone = "stone";
 const paper = "paper";
 const scissors = "scissors";
@@ -28,8 +33,8 @@ const tie = "tie";
 const won = "won";
 const lost = "lost";
 
-let computerScore = Number(localStorage.getItem("computerScore"));
-let userScore = Number(localStorage.getItem("userScore"));
+let computerScore = Number(sessionStorage.getItem("computerScore"));
+let userScore = Number(sessionStorage.getItem("userScore"));
 
 userScoreValue.innerHTML = userScore;
 displayComputerScore.innerHTML = computerScore;
@@ -101,8 +106,8 @@ function updateScore(result) {
   } else if (result == lost) {
     computerScore += 1;
   }
-  localStorage.setItem("userScore", userScore);
-  localStorage.setItem("computerScore", computerScore);
+  sessionStorage.setItem("userScore", userScore);
+  sessionStorage.setItem("computerScore", computerScore);
 }
 
 function updateUI(userChoice, computerChoice, result) {
@@ -119,11 +124,11 @@ function updateUI(userChoice, computerChoice, result) {
   resultSection.style.display = "flex";
 
   if (result == won) {
-    userCircle.style.display = "flex";
+    userCircle.style.display = "block";
     youWin.style.display = "flex";
     nextButton.style.display = "flex";
   } else if (result == lost) {
-    pcCircle.style.display = "flex";
+    pcCircle.style.display = "block";
     pcWin.style.display = "flex";
   } else if (result == tie) {
     userPCTie.style.display = "flex";
