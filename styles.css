@@ -171,6 +171,7 @@ li::marker {
   flex-direction: column;
   align-items: center;
   margin-left: auto;
+  font-size: 2rem;
   margin-right: auto;
   color: white;
   margin-top: 20%;
@@ -208,7 +209,7 @@ li::marker {
 }
 
 #hurray-page {
-  /* text-align: center; */
+  text-align: center;
 }
 
 /* 
@@ -228,6 +229,7 @@ li::marker {
   border: 2px solid white;
   width: 6rem;
   height: 2rem;
+  margin-top: 1rem;
   color: #6b6b6b;
   background-color: white;
   border-radius: 0.5rem;
@@ -235,7 +237,7 @@ li::marker {
 
 #play-again-button {
   display: flex;
-
+  align-items: center;
   justify-content: center;
   border: 2px solid white;
   width: 6rem;
@@ -243,6 +245,8 @@ li::marker {
   color: #6b6b6b;
   background-color: white;
   border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0;
 }
 
 /* .triangle {
@@ -299,9 +303,9 @@ li::marker {
 }
 
 #result-section {
-  display: flex;
-  align-items: center;
   gap: 10rem;
+  position: relative;
+  align-items: center;
 }
 
 #pc-choice,
