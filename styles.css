@@ -134,6 +134,9 @@ button {
   margin-bottom: 0.7rem;
   position: absolute;
   top: -3rem;
+  width: max-content;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .you-picked,
@@ -197,7 +200,7 @@ button {
   width: 8rem;
   height: 8rem;
   border-radius: 100%;
-  border: solid 8px;
+  border: solid 10px;
   color: transparent;
   position: relative;
 }
@@ -256,8 +259,9 @@ button {
 }
 
 #stars {
-  top: 2rem;
   width: 25rem;
+  top: 25%;
+  transform: translate(0, -50%);
   position: absolute;
   animation: twinkle 1.5s infinite;
 }
