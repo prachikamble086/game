@@ -166,17 +166,33 @@ li::marker {
   font-size: 1rem;
 }
 
-#trophy {
+.image-trophy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-top: 8rem;
   position: relative;
-  top: 8rem;
-  left: 35rem;
-  height: 10rem;
+}
+
+.image {
+  margin-bottom: 0;
+}
+
+#trophy {
+  width: 10rem;
+  margin-bottom: 0;
+  position: relative;
 }
 
 #stars {
+  top: -6rem;
+  height: 80%;
+  width: 200%;
   position: absolute;
-  left: 25rem;
-  top: 2rem;
+
   animation: twinkle 1.5s infinite;
 }
 @keyframes twinkle {
@@ -191,23 +207,25 @@ li::marker {
   }
 }
 
+#hurray-page {
+  text-align: center;
+}
+
+/* 
 .hurray-page-content {
   text-align: center;
-  bottom: 5rem;
-  right: 31rem;
+
   position: absolute;
   font-size: 2rem;
   color: white;
-}
+} */
 
 .hurray-content {
   font-size: 4rem;
 }
 
 #play-again-hurray-button {
-  position: fixed;
-  bottom: 2rem;
-  right: 37rem;
+  margin-top: 2rem;
   border: 2px solid white;
   width: 6rem;
   height: 2rem;
@@ -217,9 +235,8 @@ li::marker {
 }
 
 #play-again-button {
-  position: fixed;
-  bottom: 10rem;
-  /* right: 37rem; */
+  display: flex;
+  justify-content: center;
   border: 2px solid white;
   width: 6rem;
   height: 2rem;
@@ -329,7 +346,6 @@ li::marker {
 .outcome-section {
   display: flex;
   justify-content: center;
-  bottom: auto;
 }
 
 #you-picked,
@@ -337,4 +353,36 @@ li::marker {
   font-size: 1.5rem;
   color: white;
   margin-bottom: 0.5rem;
+}
+
+#user-circle {
+  width: 16%;
+}
+
+.circle-one {
+  background-color: #68cdd9;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+}
+
+.circle-two {
+  background-color: #a0dbcc;
+  float: left;
+  width: 74%;
+  margin-top: 13%;
+  margin-left: 13%;
+  padding-bottom: 14%;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.circle-three {
+  background-color: #00abc9;
+  width: 60%;
+  margin-top: 20%;
+  margin-left: 20%;
+  padding-bottom: 60%;
+  border-radius: 50%;
+  z-index: 10;
 }
