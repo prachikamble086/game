@@ -329,7 +329,7 @@ li::marker {
 .outcome-section {
   display: flex;
   justify-content: center;
-  bottom: 6rem;
+  bottom: auto;
 }
 
 #you-picked,
