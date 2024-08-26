@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock Paper Scissors game</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,10 +34,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="triangle-container">
-          <div class="triangle"></div>
-          <hr class="triangle-line" />
-        </div> -->
+
         <div id="game-buttons">
           <div class="game-button-stone-paper">
             <button onclick="playGame('stone')" id="stone-img">
@@ -72,13 +69,14 @@
 
           <div class="outcome-section">
             <div id="you-win" style="display: none">
-              <div class="a">
+              <div class="game-staus-outcome-section">
                 <div class="game-status">YOU WIN</div>
                 <div class="game-player">AGAINST PC</div>
               </div>
             </div>
+
             <div id="pc-win" style="display: none">
-              <div class="b">
+              <div class="game-player-outcome-section">
                 <div class="game-status">YOU LOST</div>
                 <div class="game-player">AGAINST PC</div>
               </div>
@@ -109,7 +107,21 @@
 
       <div id="hurray-page" style="display: none">
         <div class="image-trophy">
-          <img id="stars" src="stars.png" alt="stars" />
+          <div id="stars">
+            <div id="stars-one">
+              <img src="Star1.png" alt="" class="star1" />
+              <img src="Star2.png" alt="" class="star2" />
+              <img src="Star3.png" alt="" class="star3" />
+              <img src="Star4.png" alt="" class="star4" />
+              <img src="Star5.png" alt="" class="star5" />
+            </div>
+            <div id="stars-two">
+              <img src="Star9.png" alt="" />
+              <img src="Star6.png" alt="" />
+              <img src="Star7.png" alt="" />
+              <img src="Star8.png" alt="" />
+            </div>
+          </div>
           <img id="trophy" src="trophy.png" alt="trophy" />
           <div class="hurray-content">HURRAY</div>
           <div>YOU WIN THE GAME</div>
@@ -120,9 +132,8 @@
       </div>
 
       <div id="rules-box" style="display: none">
-        <div>
-          <button id="rules-close-button" onclick="closeRules()">X</button>
-        </div>
+        <button id="rules-close-button" onclick="closeRules()">X</button>
+
         <div class="game-rules">Game Rules</div>
         <ul class="rules-list">
           <li class="rules-box-list">

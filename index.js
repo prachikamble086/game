@@ -20,11 +20,6 @@ const pcChoiceImg = document.getElementById("pc-choice");
 const userChoiceButton = document.getElementById("user-choice-button");
 const pcChoiceButton = document.getElementById("pc-choice-button");
 
-const outterbuttonuserpicked = document.getElementById(
-  "outter-button-user-picked"
-);
-const outterbuttonpcpicked = document.getElementById("outter-button-pc-picked");
-
 const stone = "stone";
 const paper = "paper";
 const scissors = "scissors";
@@ -55,16 +50,6 @@ function randomPCChoice() {
     return paper;
   } else {
     return scissors;
-  }
-}
-
-function getBorderColor(choice) {
-  if (choice == stone) {
-    return "#0074b6";
-  } else if (choice == paper) {
-    return "#ffa943";
-  } else {
-    return "#bd00ff";
   }
 }
 
@@ -132,6 +117,16 @@ function updateUI(userChoice, computerChoice, result) {
     pcWin.style.display = "flex";
   } else if (result == tie) {
     userPCTie.style.display = "flex";
+  }
+}
+
+function getBorderColor(choice) {
+  if (choice == stone) {
+    return "#0074b6";
+  } else if (choice == paper) {
+    return "#ffa943";
+  } else {
+    return "#bd00ff";
   }
 }
 
