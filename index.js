@@ -14,6 +14,9 @@ const userCircle = document.getElementById("user-circle");
 const userPCTie = document.getElementById("user-pc-tie");
 const nextButton = document.getElementById("next-button");
 
+const userChoiceImg = document.getElementById("user-choice");
+const pcChoiceImg = document.getElementById("pc-choice");
+
 const stone = "stone";
 const paper = "paper";
 const scissors = "scissors";
@@ -27,11 +30,9 @@ let userScore = 0;
 
 function playGame(userChoice) {
   const computerChoice = randomPCChoice();
-  console.log(computerChoice);
-
   const result = calculateOutcome(userChoice, computerChoice);
-  console.log(result);
   updateScore(result);
+  updateUI(userChoice, computerChoice, result);
 }
 
 function randomPCChoice() {
@@ -84,48 +85,58 @@ function updateScore(result) {
   } else if (result == lost) {
     computerScore += 1;
   }
+}
+console.log({ userChoiceImg });
+console.log({ pcChoiceImg });
+
+function updateUI(userChoice, computerChoice, result) {
+  userChoiceImg.src = userChoice + ".png";
+  pcChoiceImg.src = computerChoice + ".png";
 
   userScoreValue.innerHTML = userScore;
   displayComputerScore.innerHTML = computerScore;
+
   gameButtons.style.display = "none";
-  resultSection.style.display = "block";
+  resultSection.style.display = "flex";
 
   if (result == won) {
-    userCircle.style.display = "block";
-    youWin.style.display = "block";
-    nextButton.style.display = "block";
+    userCircle.style.display = "flex";
+    youWin.style.display = "flex";
+    nextButton.style.display = "flex";
   } else if (result == lost) {
-    pcCircle.style.display = "block";
-    pcWin.style.display = "block";
+    pcCircle.style.display = "flex";
+    pcWin.style.display = "flex";
   } else if (result == tie) {
-    userPCTie.style.display = "block";
+    userPCTie.style.display = "flex";
+
+    // let playAgainTie = document.getElementById("play-again-button");
+    // playAgainTie.innerHTML = "REPLAY";
   }
 }
 
 function showRules() {
-  rulesbox.style.display = "block";
+  rulesbox.style.display = "flex";
 }
 
 function closeRules() {
   rulesbox.style.display = "none";
 }
 
-function displayGamePage() {}
-
 function playAgain() {
-  gameButtons.style.display = "block";
+  gameButtons.style.display = "flex";
   userCircle.style.display = "none";
   youWin.style.display = "none";
   pcCircle.style.display = "none";
+  pcWin.style.display = "none";
   userPCTie.style.display = "none";
   resultSection.style.display = "none";
   hurrayPage.style.display = "none";
-  gamePage.style.display = "block";
+  gamePage.style.display = "flex";
   nextButton.style.display = "none";
 }
 
 function showHurrayPage() {
-  hurrayPage.style.display = "block";
+  hurrayPage.style.display = "flex";
   gamePage.style.display = "none";
   nextButton.style.display = "none";
 }

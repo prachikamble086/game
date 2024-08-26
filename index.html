@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="main">
@@ -16,23 +22,39 @@
             <div id="scissors">SCISSORS</div>
           </div>
           <div class="scorecard">
-            <div>COMPUTER SCORE</div>
-            <div id="computer-score">0</div>
-            <div>YOUR SCORE</div>
-            <div id="user-score">0</div>
+            <div class="computer-score-card">
+              <div>COMPUTER</div>
+              <div>SCORE</div>
+              <div id="computer-score">0</div>
+            </div>
+            <div class="user-score-card">
+              <div>YOUR</div>
+              <div>SCORE</div>
+              <div id="user-score">0</div>
+            </div>
           </div>
         </div>
-
+        <!-- <div class="triangle-container">
+          <div class="triangle"></div>
+          <hr class="triangle-line" />
+        </div> -->
         <div id="game-buttons">
-          <button onclick="playGame('stone')" id="stone-img">
-            <img src="stone.png" />
-          </button>
-          <button onclick="playGame('paper')" id="paper-img">
-            <img src="paper.png" />
-          </button>
-          <button onclick="playGame('scissors')" id="scissors">
-            <img src="scissors.png" />
-          </button>
+          <div class="game-button-stone-paper">
+            <button onclick="playGame('stone')" id="stone-img">
+              <img src="stone.png" />
+            </button>
+            <hr class="hr-line" />
+            <button onclick="playGame('paper')" id="paper-img">
+              <img src="paper.png" />
+            </button>
+          </div>
+          <div class="game-button-scissors">
+            <hr class="hr-side" />
+            <hr class="hrline" />
+            <button onclick="playGame('scissors')" id="scissors-img">
+              <img src="scissors.png" />
+            </button>
+          </div>
         </div>
 
         <div id="result-section" style="display: none">
@@ -42,23 +64,33 @@
               <div class="cirle-two"></div>
               <div class="cirle-three"></div>
             </div>
-            <div class="you-picked">YOU PICKED</div>
-            <button id="win-symbol"></button>
+            <div id="you-picked">YOU PICKED</div>
+            <button class="user-choice-button">
+              <img id="user-choice" src="" alt="" />
+            </button>
           </div>
 
           <div class="outcome-section">
             <div id="you-win" style="display: none">
-              <div>YOU WIN</div>
-              <div>AGAINST PC</div>
+              <div class="a">
+                <div class="game-status">YOU WIN</div>
+                <div class="game-player">AGAINST PC</div>
+              </div>
             </div>
             <div id="pc-win" style="display: none">
-              <div>YOU LOST</div>
-              <div>AGAINST PC</div>
+              <div class="b">
+                <div class="game-status">YOU LOST</div>
+                <div class="game-player">AGAINST PC</div>
+              </div>
             </div>
 
-            <div id="user-pc-tie" style="display: none">TIE UP</div>
+            <div id="user-pc-tie" class="game-status" style="display: none">
+              TIE UP
+            </div>
 
-            <button onclick="playAgain()">PLAY AGAIN</button>
+            <button id="play-again-button" onclick="playAgain()">
+              PLAY AGAIN
+            </button>
           </div>
 
           <div class="pc-picked">
@@ -68,39 +100,46 @@
               <div class="cirle-three"></div>
             </div>
             <div id="pc-picked">PC PICKED</div>
-            <button id="pc-symbol"></button>
+            <button class="pc-choice-button">
+              <img id="pc-choice" src="" alt="" />
+            </button>
           </div>
         </div>
       </div>
 
       <div id="hurray-page" style="display: none">
         <div class="image">
-          <img src="trophy.png" alt="trophy" />
-          <img src="stars.png" alt="stars" />
+          <img id="trophy" src="trophy.png" alt="trophy" />
+          <img id="stars" src="stars.png" alt="stars" />
         </div>
 
-        <div>HURRAY</div>
-        <div>YOU WIN THE GAME</div>
-        <button onclick="playAgain()" id="play-again-button">PLAY AGAIN</button>
+        <div class="hurray-page-content">
+          <div class="hurray-content">HURRAY</div>
+          <div>YOU WIN THE GAME</div>
+        </div>
+        <button onclick="playAgain()" id="play-again-hurray-button">
+          PLAY AGAIN
+        </button>
       </div>
 
       <div id="rules-box" style="display: none">
         <div>
-          <button onclick="closeRules()">X</button>
+          <button id="rules-close-button" onclick="closeRules()">X</button>
         </div>
-        <ul>
-          <li>
+        <div class="game-rules">Game Rules</div>
+        <ul class="rules-list">
+          <li class="rules-box-list">
             Rock beats scissors, scissors beat paper, and paper beats rock.
           </li>
-          <li>
+          <li class="rules-box-list">
             Agree ahead of time whether you’ll count off “rock, paper, scissors,
             shoot” or just “rock, paper, scissors.”
           </li>
-          <li>
+          <li class="rules-box-list">
             Use rock, paper, scissors to settle minor decisions or simply play
             to pass the time
           </li>
-          <li>
+          <li class="rules-box-list">
             If both players lay down the same hand, each player lays down
             another hand
           </li>
@@ -108,7 +147,7 @@
       </div>
 
       <div>
-        <button onclick="showRules()">RULES</button>
+        <button id="rules-button" onclick="showRules()">RULES</button>
 
         <button
           id="next-button"
