@@ -328,7 +328,8 @@ li::marker {
 
 .outcome-section {
   display: flex;
-  /* align-items: center; */
+  justify-content: center;
+  bottom: 6rem;
 }
 
 #you-picked,
