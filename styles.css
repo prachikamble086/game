@@ -173,7 +173,7 @@ li::marker {
   margin-left: auto;
   margin-right: auto;
   color: white;
-  margin-top: 8rem;
+  margin-top: 20%;
   position: relative;
 }
 
@@ -208,7 +208,7 @@ li::marker {
 }
 
 #hurray-page {
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* 
@@ -225,7 +225,6 @@ li::marker {
 }
 
 #play-again-hurray-button {
-  margin-top: 2rem;
   border: 2px solid white;
   width: 6rem;
   height: 2rem;
@@ -236,6 +235,7 @@ li::marker {
 
 #play-again-button {
   display: flex;
+
   justify-content: center;
   border: 2px solid white;
   width: 6rem;
